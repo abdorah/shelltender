@@ -1,12 +1,17 @@
 #!/usr/bin/env sh
 
 find_and_replace() {
-    echo "Find and Replace selected."
-    read -p "Enter regex pattern: " pattern
-    read -p "Case sensitive? (y/n): " case_sensitive
-    read -p "Match the whole word? (y/n): " whole_word
-    read -p "Files to include (comma-separated): " include
-    read -p "Files to exclude (comma-separated): " exclude
+    echo -e "${BLUE}Find and Replace selected.${NC}"
+    printf "${YELLOW}Enter regex pattern: ${NC}"
+    read pattern
+    printf "${YELLOW}Case sensitive? (y/n): ${NC}"
+    read case_sensitive
+    printf "${YELLOW}Match the whole word? (y/n): ${NC}"
+    read whole_word
+    printf "${YELLOW}Files to include (comma-separated): ${NC}"
+    read include
+    printf "${YELLOW}Files to exclude (comma-separated): ${NC}"
+    read exclude
 
     # Build the find and replace command
     options=""
@@ -18,5 +23,5 @@ find_and_replace() {
             sed -i "$options" "s/$pattern/<replacement>/g" "$file"
         fi
     done
-    echo "Find and replace completed."
+    echo -e "${GREEN}Find and replace completed.${NC}"
 }

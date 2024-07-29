@@ -1,15 +1,18 @@
 #!/usr/bin/env sh
 
 move_and_copy() {
-    echo "Move and Copy Files selected."
-    read -p "Enter source: " source
-    read -p "Enter destination: " destination
-    read -p "Move (m) or Copy (c)? " action
+    echo -e "${BLUE}Move and Copy Files selected.${NC}"
+    printf "${YELLOW}Enter source: ${NC}"
+    read source
+    printf "${YELLOW}Enter destination: ${NC}"
+    read destination
+    printf "${YELLOW}Move (m) or Copy (c)? ${NC}"
+    read action
 
     if [ "$action" = "m" ]; then
         mv "$source" "$destination"
     else
         cp "$source" "$destination"
     fi
-    echo "Move and copy files completed."
+    echo -e "${GREEN}Move and copy files completed.${NC}"
 }

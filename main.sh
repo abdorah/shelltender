@@ -11,14 +11,23 @@
 . ./scp_copy_files.sh
 . ./move_and_copy.sh
 
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
 # Main Interactive Loop
 while true; do
     welcome
-    read -p "Select an option: " option
+    printf "${YELLOW}Select an option: ${NC}"
+    read option
 
     case $option in
         0) 
-            read -p "Enter command number for help: " cmd
+            printf "${YELLOW}Enter command number for help: ${NC}"
+            read cmd
             help $cmd
             ;;
         1) 
@@ -43,11 +52,11 @@ while true; do
             move_and_copy
             ;;
         q)
-            echo "Exiting. Goodbye!"
+            printf "${GREEN}Exiting. Goodbye!${NC}\n"
             break
             ;;
         *)
-            echo "Invalid option. Please try again."
+            printf "${RED}Invalid option. Please try again.${NC}\n"
             ;;
     esac
 done

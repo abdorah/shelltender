@@ -1,10 +1,13 @@
 #!/usr/bin/env sh
 
 find_in_folder() {
-    echo "Find in Folder selected."
-    read -p "Enter regex pattern: " pattern
-    read -p "Case sensitive? (y/n): " case_sensitive
-    read -p "Include subfolders? (y/n): " include_subfolders
+    echo -e "${BLUE}Find in Folder selected.${NC}"
+    printf "${YELLOW}Enter regex pattern: ${NC}"
+    read pattern
+    printf "${YELLOW}Case sensitive? (y/n): ${NC}"
+    read case_sensitive
+    printf "${YELLOW}Include subfolders? (y/n): ${NC}"
+    read include_subfolders
 
     options=""
     [ "$case_sensitive" = "n" ] && options="$options -i"
@@ -14,5 +17,5 @@ find_in_folder() {
     else
         grep $options "$pattern" *
     fi
-    echo "Find in folder completed."
+    echo -e "${GREEN}Find in folder completed.${NC}"
 }
