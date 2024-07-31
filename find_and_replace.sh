@@ -8,6 +8,8 @@ find_and_replace() {
     read case_sensitive
     printf "${YELLOW}Match the whole word? (y/n): ${NC}"
     read whole_word
+    printf "${YELLOW}Replacement pattern: ${NC}"
+    read replacement
     printf "${YELLOW}Files to include (comma-separated): ${NC}"
     read include
     printf "${YELLOW}Files to exclude (comma-separated): ${NC}"
@@ -20,7 +22,7 @@ find_and_replace() {
 
     for file in $(echo $include | tr "," "\n"); do
         if ! echo $exclude | grep -q "$file"; then
-            sed -i "$options" "s/$pattern/<replacement>/g" "$file"
+            sed -i $options "s/$pattern/$replacement/g" "$file"
         fi
     done
     echo -e "${GREEN}Find and replace completed.${NC}"
