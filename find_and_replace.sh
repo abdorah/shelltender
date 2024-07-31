@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 find_and_replace() {
-    echo -e "${BLUE}Find and Replace selected.${NC}"
+    echo  "${BLUE}Find and Replace selected.${NC}"
     printf "${YELLOW}Enter regex pattern: ${NC}"
     read pattern
     printf "${YELLOW}Case sensitive? (y/n): ${NC}"
@@ -25,5 +25,5 @@ find_and_replace() {
             sed -i $options "s/$pattern/$replacement/g" "$file"
         fi
     done
-    echo -e "${GREEN}Find and replace completed.${NC}"
+    echo  "${GREEN}Find and replace completed.${NC}"
 }

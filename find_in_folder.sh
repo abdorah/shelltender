@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 find_in_folder() {
-    echo -e "${BLUE}Find in Folder selected.${NC}"
+    echo  "${BLUE}Find in Folder selected.${NC}"
     printf "${YELLOW}Enter regex pattern: ${NC}"
     read pattern
     printf "${YELLOW}Case sensitive? (y/n): ${NC}"
@@ -17,5 +17,5 @@ find_in_folder() {
     else
         grep $options "$pattern" *
     fi
-    echo -e "${GREEN}Find in folder completed.${NC}"
+    echo  "${GREEN}Find in folder completed.${NC}"
 }

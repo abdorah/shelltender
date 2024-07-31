@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 move_and_copy() {
-    echo -e "${BLUE}Move and Copy Files selected.${NC}"
+    echo  "${BLUE}Move and Copy Files selected.${NC}"
     printf "${YELLOW}Enter source: ${NC}"
     read source
     printf "${YELLOW}Enter destination: ${NC}"
@@ -14,5 +14,5 @@ move_and_copy() {
     else
         cp "$source" "$destination"
     fi
-    echo -e "${GREEN}Move and copy files completed.${NC}"
+    echo  "${GREEN}Move and copy files completed.${NC}"
 }

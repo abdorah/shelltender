@@ -1,4 +1,4 @@
-# Shell Script Server
+# Shell Tender
 
 Welcome to the Shell Script Server project! This project aims to provide an interactive and user-friendly way to learn and write shell scripts. By leveraging a colorful and intuitive UI, you can focus on what you want to do rather than how to achieve it. At the end, you can get the generated script to customize it however you like.
 
@@ -23,8 +23,8 @@ Ensure you have `sh` installed. This script should work on most Unix-like system
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/shell-script-server.git
-    cd shell-script-server
+    git clone https://github.com/abdorah/shelltender.git
+    cd shelltender
     ```
 
 2. Make sure all scripts are executable:

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 ssh_connection() {
-    echo -e "${BLUE}SSH Connection selected.${NC}"
+    echo  "${BLUE}SSH Connection selected.${NC}"
     printf "${YELLOW}Enter host: ${NC}"
     read host
     printf "${YELLOW}Enter username: ${NC}"
@@ -12,5 +12,5 @@ ssh_connection() {
     [ -z "$port" ] && port=22
 
     ssh "$username@$host" -p "$port"
-    echo -e "${GREEN}SSH connection completed.${NC}"
+    echo  "${GREEN}SSH connection completed.${NC}"
 }
